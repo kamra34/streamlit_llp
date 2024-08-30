@@ -4,9 +4,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import relationship
+from config import SQLALCHEMY_DATABASE_URI
 
 # SQLAlchemy setup
-SQLALCHEMY_DATABASE_URI = "postgresql://kami:4444@eu1.pitunnel.com:20877/svenska"
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
